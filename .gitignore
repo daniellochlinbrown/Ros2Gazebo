@@ -1,0 +1,15 @@
+# ROS-specific
+build/
+devel/
+install/
+log/
+.catkin_workspace
+.catkin_tools/
+
+# General
+*.log
+*.swp
+*.tmp
+.DS_Store
+.vscode/
+.idea/
