@@ -1,0 +1,4 @@
+<launch>
+  <!-- launch offboard node -->
+  <node pkg="uas_gazebo_sim" type="offboard_demo_node" name="offboard_demo_node" required="true" output="screen"/>
+</launch>

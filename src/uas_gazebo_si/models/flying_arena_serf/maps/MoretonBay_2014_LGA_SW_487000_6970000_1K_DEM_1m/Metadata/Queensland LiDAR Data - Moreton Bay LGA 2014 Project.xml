@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MD_Metadata xmlns="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd      http://www.opengis.net/gml http://www.isotc211.org/2005/gml/gml.xsd      http://www.w3.org/1999/xlink http://www.isotc211.org/2005/xlink/xlinks.xsd">
+    <fileIdentifier>
+        <gco:CharacterString>{DA62F92A-DD88-4694-A178-9084035B2BBB}</gco:CharacterString>
+    </fileIdentifier>
+    <language>
+        <gco:CharacterString>eng</gco:CharacterString>
+    </language>
+    <characterSet>
+        <MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8"/>
+    </characterSet>
+    
+    <hierarchyLevel>
+        <MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</MD_ScopeCode>
+    </hierarchyLevel>
+    
+    <contact>
+        <CI_ResponsibleParty id="metadataContact">
+            <organisationName>
+                <gco:CharacterString>Department of Natural Resources and Mines</gco:CharacterString>
+            </organisationName>
+            <positionName>
+                <gco:CharacterString>Senior Spatial Information Officer</gco:CharacterString>
+            </positionName>
+            <contactInfo>
+                <CI_Contact>
+                    <phone>
+                        <CI_Telephone>
+                            <voice>
+                                <gco:CharacterString>61 7 3406 2098</gco:CharacterString>
+                            </voice>
+                        </CI_Telephone>
+                    </phone>
+                    <address>
+                        <CI_Address>
+                            
+                            
+                            
+                            
+                            
+                            <electronicMailAddress>
+                                <gco:CharacterString>LSISDMTopoDataTeam@dnrm.qld.gov.au</gco:CharacterString>
+                            </electronicMailAddress>
+                        </CI_Address>
+                    </address>
+                    
+                </CI_Contact>
+            </contactInfo>
+            <role>
+                <CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</CI_RoleCode>
+            </role>
+        </CI_ResponsibleParty>
+    </contact>
+    <dateStamp>
+        <gco:Date>2016-01-11</gco:Date>
+    </dateStamp>
+    <metadataStandardName>
+        <gco:CharacterString>ISO 19115:2005, ANZLIC ISO 1.1</gco:CharacterString>
+    </metadataStandardName>
+    <metadataStandardVersion>
+        <gco:CharacterString>Minimum Validation</gco:CharacterString>
+    </metadataStandardVersion>
+    <referenceSystemInfo>
+        <MD_ReferenceSystem id="coordRefSystem">
+            <referenceSystemIdentifier>
+                <RS_Identifier>
+                    <authority>
+                        <CI_Citation>
+                            <title>
+                                <gco:CharacterString>EPSG Geodetic Parameter
+                                Dataset</gco:CharacterString>
+                            </title>
+                            <date>
+                                <CI_Date>
+                                    <date>
+                                        <gco:Date>2007-07-16</gco:Date>
+                                    </date>
+                                    <dateType>
+                                        <CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">revision </CI_DateTypeCode>
+                                    </dateType>
+                                </CI_Date>
+                            </date>
+                            <edition>
+                                <gco:CharacterString>Version 6.13</gco:CharacterString>
+                            </edition>
+                        </CI_Citation>
+                    </authority>
+                    <code>
+                        <gco:CharacterString>EPSG:28356</gco:CharacterString>
+                    </code>
+                </RS_Identifier>
+            </referenceSystemIdentifier>
+        </MD_ReferenceSystem>
+    </referenceSystemInfo>
+    <referenceSystemInfo>
+        <MD_ReferenceSystem id="projection">
+            <referenceSystemIdentifier>
+                <RS_Identifier>
+                    <authority gco:nilReason="unknown"/>
+                    <code>
+                        <gco:CharacterString>MGA56</gco:CharacterString>
+                    </code>
+                    <codeSpace>
+                        <gco:CharacterString>Projection</gco:CharacterString>
+                    </codeSpace>
+                </RS_Identifier>
+            </referenceSystemIdentifier>
+        </MD_ReferenceSystem>
+    </referenceSystemInfo>
+    <referenceSystemInfo>
+        <MD_ReferenceSystem id="horizDatum">
+            <referenceSystemIdentifier>
+                <RS_Identifier>
+                    <authority gco:nilReason="unknown"/>
+                    <code>
+                        <gco:CharacterString>GDA94</gco:CharacterString>
+                    </code>
+                    <codeSpace>
+                        <gco:CharacterString>Horizontal Datum</gco:CharacterString>
+                    </codeSpace>
+                </RS_Identifier>
+            </referenceSystemIdentifier>
+        </MD_ReferenceSystem>
+    </referenceSystemInfo>
+    <referenceSystemInfo>
+        <MD_ReferenceSystem id="vertDatum">
+            <referenceSystemIdentifier>
+                <RS_Identifier>
+                    <authority gco:nilReason="unknown"/>
+                    <code>
+                        <gco:CharacterString>AHD</gco:CharacterString>
+                    </code>
+                    <codeSpace>
+                        <gco:CharacterString>Vertical Datum</gco:CharacterString>
+                    </codeSpace>
+                </RS_Identifier>
+            </referenceSystemIdentifier>
+        </MD_ReferenceSystem>
+    </referenceSystemInfo>
+    <identificationInfo>
+        <MD_DataIdentification>
+            <citation>
+                <CI_Citation>
+                    <title>
+                        <gco:CharacterString>Queensland LiDAR Data - Moreton Bay LGA 2014 Project</gco:CharacterString>
+                    </title>
+                    <alternateTitle>
+                        <gco:CharacterString>Offline data</gco:CharacterString>
+                    </alternateTitle>
+                    <date>
+                        <CI_Date>
+                            <date>
+                                <gco:Date>2014-04-03</gco:Date>
+                            </date>
+                            <dateType>
+                                <CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                            </dateType>
+                        </CI_Date>
+                    </date>
+                    
+                    
+                    
+                    <citedResponsibleParty>
+                        <CI_ResponsibleParty id="resourceCustodian">
+                            <organisationName>
+                                <gco:CharacterString>Department of Natural Resources and Mines</gco:CharacterString>
+                            </organisationName>
+                            <positionName>
+                                <gco:CharacterString>Executive Director, Land and Spatial Information</gco:CharacterString>
+                            </positionName>
+							<contactInfo>
+                               <CI_Contact>
+                                 <onlineResource>
+                                  <CI_OnlineResource>
+                                    <linkage>
+                                        <URL>https://www.business.qld.gov.au/business/support-tools-grants/services/mapping-data-imagery</URL>
+                                    </linkage>
+                                  </CI_OnlineResource>
+                                 </onlineResource>                            
+                               </CI_Contact>
+                            </contactInfo>							
+                            <role>
+                                <CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</CI_RoleCode>
+                            </role>
+                        </CI_ResponsibleParty>
+                    </citedResponsibleParty>
+                    <citedResponsibleParty>
+                        <CI_ResponsibleParty id="resourceOwner">
+                            <organisationName>
+                                <gco:CharacterString>Moreton Bay Regional Council</gco:CharacterString>
+                            </organisationName>
+                            
+                            <role>
+                                <CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="owner">owner</CI_RoleCode>
+                            </role>
+                        </CI_ResponsibleParty>
+                    </citedResponsibleParty>
+                    
+                    
+                    
+                    <presentationForm>
+                        <CI_PresentationFormCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode" codeListValue="modelDigital">modelDigital</CI_PresentationFormCode>
+                    </presentationForm>
+                    
+                </CI_Citation>
+            </citation>
+
+
+            <abstract>
+                <gco:CharacterString>The capture of high resolution elevation data using LiDAR technology over the entire Local Government Area of Moreton Bay was undertaken on behalf of the Moreton Bay Regional Council. Available formats for this dataset are listed under the heading Additional Information. This dataset is not downloadable via QSpatial. For data supply details please scroll down for the heading Point of Contact.</gco:CharacterString>
+            </abstract>
+            <purpose>
+                <gco:CharacterString>To provide highly accurate elevation data for use in risk assessment, the management of natural disasters, infrastructure planning, developing strategies to support climate change, topographic mapping and modelling.</gco:CharacterString>
+            </purpose>
+            <status>
+                <MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed">completed</MD_ProgressCode>
+            </status>
+            <pointOfContact>
+                <CI_ResponsibleParty>
+                    <organisationName>
+                        <gco:CharacterString>Department of Natural Resources and Mines</gco:CharacterString>
+                    </organisationName>
+                    <positionName>
+                        <gco:CharacterString>Senior Spatial Information Officer (Product Delivery)</gco:CharacterString>
+                    </positionName>
+                    <contactInfo>
+                        <CI_Contact>
+                            <phone>
+                                <CI_Telephone>
+                                    <voice>
+                                        <gco:CharacterString>61 7 3406 2818</gco:CharacterString>
+                                    </voice>
+                                </CI_Telephone>
+                            </phone>
+                            <address>
+                                <CI_Address>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <electronicMailAddress>
+                                        <gco:CharacterString>SIProductdelivery@dnrm.qld.gov.au</gco:CharacterString>
+                                    </electronicMailAddress>
+                                </CI_Address>
+                            </address>
+                                                        
+                        </CI_Contact>
+                    </contactInfo>
+                    <role>
+                        <CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"/>
+                    </role>
+                </CI_ResponsibleParty>
+            </pointOfContact>
+            <resourceMaintenance>
+                <MD_MaintenanceInformation>
+                    <maintenanceAndUpdateFrequency>
+                        <MD_MaintenanceFrequencyCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="notPlanned"/>
+                    </maintenanceAndUpdateFrequency>
+                    
+                </MD_MaintenanceInformation>
+            </resourceMaintenance>
+            
+            
+            <descriptiveKeywords>
+                <MD_Keywords id="ThemeAnzlicThesaurus">
+                    <keyword>
+                        <gco:CharacterString>LAND-Topography</gco:CharacterString>
+                    </keyword>
+<keyword>
+                        <gco:CharacterString>PHOTOGRAPHY-AND-IMAGERY-Remote-Sensing</gco:CharacterString>
+                    </keyword>
+                    <type>
+                        <MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</MD_KeywordTypeCode>
+                    </type>
+                    <thesaurusName>
+                        <CI_Citation>
+                            <title>
+                                <gco:CharacterString>ANZLIC Search Words</gco:CharacterString>
+                            </title>
+                            <date>
+                                <CI_Date>
+                                    <date gco:nilReason="unknown"/>
+                                    <dateType>
+                                        <CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</CI_DateTypeCode>
+                                    </dateType>
+                                </CI_Date>
+                            </date>
+                        </CI_Citation>
+                    </thesaurusName>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            
+            <descriptiveKeywords>
+                <MD_Keywords id="ThemeOtherThesaurus">
+                    <keyword>
+                        <gco:CharacterString>Topography</gco:CharacterString>
+                    </keyword>
+<keyword>
+                        <gco:CharacterString>Terrain</gco:CharacterString>
+                    </keyword>
+<keyword>
+                        <gco:CharacterString>Digital Elevation Models</gco:CharacterString>
+                    </keyword>
+<keyword>
+                        <gco:CharacterString>DEM</gco:CharacterString>
+                    </keyword>
+<keyword>
+                        <gco:CharacterString>LiDAR</gco:CharacterString>
+                    </keyword>
+<keyword>
+                        <gco:CharacterString>ALS</gco:CharacterString>
+                    </keyword>
+<keyword>
+                        <gco:CharacterString>Contours</gco:CharacterString>
+                    </keyword>
+                    <type>
+                        <MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</MD_KeywordTypeCode>
+                    </type>
+                    <thesaurusName>
+                        <CI_Citation>
+                            <title>
+                                <gco:CharacterString>ANZLIC Search Words</gco:CharacterString>
+                            </title>
+                            <date>
+                                <CI_Date>
+                                    <date gco:nilReason="unknown"/>
+                                    <dateType>
+                                        <CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</CI_DateTypeCode>
+                                    </dateType>
+                                </CI_Date>
+                            </date>
+                            <otherCitationDetails>
+                                <gco:CharacterString>Theme keywords input by metadata
+                                publisher</gco:CharacterString>
+                            </otherCitationDetails>
+                        </CI_Citation>
+                    </thesaurusName>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            
+            <resourceConstraints>
+                <MD_SecurityConstraints id="resourceAccessConstraint">
+                    <useLimitation>
+                        <gco:CharacterString>Data available through SI Product Delivery.&#13;
+The State of Queensland, as represented by the Department of Natural Resources and Mines, gives no warranty in relation to the data (including accuracy, reliability, completeness or suitability for a particular purpose).</gco:CharacterString>
+                    </useLimitation>
+                    <classification>
+                        <MD_ClassificationCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ClassificationCode" codeListValue="unclassified">unclassified</MD_ClassificationCode>
+                    </classification>
+                    <classificationSystem>
+                        <gco:CharacterString>Resource Access Level</gco:CharacterString>
+                    </classificationSystem>
+                </MD_SecurityConstraints>
+            </resourceConstraints>
+            <resourceConstraints>
+                <MD_LegalConstraints>
+                    <useLimitation>
+                        <gco:CharacterString>&amp;copy State of Queensland (Department of Natural Resources and Mines) 2017</gco:CharacterString>
+                    </useLimitation>
+                    <useConstraints>
+                        <MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="copyright">copyright</MD_RestrictionCode>
+                    </useConstraints>
+                </MD_LegalConstraints>
+            </resourceConstraints>
+            <resourceConstraints>
+                <MD_LegalConstraints>
+                    <useLimitation>
+                        <gco:CharacterString>Limited Use Licence</gco:CharacterString>
+                    </useLimitation>
+                    <useConstraints>
+                        <MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="license">license</MD_RestrictionCode>
+                    </useConstraints>
+                </MD_LegalConstraints>
+            </resourceConstraints>
+            <resourceConstraints>
+                <MD_LegalConstraints id="intellectualPropertyRights">
+                    <useLimitation>
+                        <gco:CharacterString>Shared IP: &#13;
+Department of Natural Resources and Mines; Moreton Bay Regional Council</gco:CharacterString>
+                    </useLimitation>
+                    <useConstraints>
+                        <MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="intellectualPropertyRights">intellectualPropertyRights</MD_RestrictionCode>
+                    </useConstraints>
+                </MD_LegalConstraints>
+            </resourceConstraints>
+            
+            
+            
+            
+            
+            
+            <language>
+                <gco:CharacterString>eng</gco:CharacterString>
+            </language>
+            <characterSet gco:nilReason="unknown"/>
+            <topicCategory>
+                <MD_TopicCategoryCode>elevation</MD_TopicCategoryCode>
+            </topicCategory>
+            
+            <extent>
+                <EX_Extent>
+                    <geographicElement>
+                        <EX_GeographicBoundingBox>
+                            <westBoundLongitude>
+                                <gco:Decimal>152.636</gco:Decimal>
+                            </westBoundLongitude>
+                            <eastBoundLongitude>
+                                <gco:Decimal>153.223</gco:Decimal>
+                            </eastBoundLongitude>
+                            <southBoundLatitude>
+                                <gco:Decimal>-27.438</gco:Decimal>
+                            </southBoundLatitude>
+                            <northBoundLatitude>
+                                <gco:Decimal>-26.779</gco:Decimal>
+                            </northBoundLatitude>
+                        </EX_GeographicBoundingBox>
+                    </geographicElement>
+                    
+                    
+                    <temporalElement>
+                        <EX_TemporalExtent>
+                            <extent>
+                                <gml:TimePeriod frame="#ISO-8601" gml:id="timePeriod1">
+                                    <gml:beginPosition>2014-04-03</gml:beginPosition>
+                                    <gml:endPosition>2014-07-10</gml:endPosition>
+                                </gml:TimePeriod>
+                            </extent>
+                        </EX_TemporalExtent>
+                    </temporalElement>
+                </EX_Extent>
+            </extent>
+            <supplementalInformation>
+                <gco:CharacterString>LiDAR DATASET NAME: Moreton_Bay_2014_LGA &#13;
+&#13;
+RELATED LiDAR DATASETS 2013-2014; &#13;
+Brisbane_2014_LGA &#13;
+Gold_Coast_2014_LGA &#13;
+Ipswich_2014_LGA &#13;
+Logan_2013_LGA&#13;
+Redland_2014_LGA &#13;
+Sunshine_Coast_2014_LGA&#13;
+&#13;
+AVAILABLE DATASET FORMATS (in 1km x 1km tiles): &#13;
+- Classified las &#13;
+(LiDAR Data Exchange Format where strikes are classified as ground, non-ground, vegetation or building) &#13;
+- 1 metre Digital Elevation Model (DEM) in ASCII xyz &#13;
+- 1 metre Digital Elevation Model (DEM) in ESRI ASCII grid &#13;
+- 0.25 metre contours in ESRI Shape  &#13;
+&#13;
+NAMING CONVENTION: &#13;
+eg. SW_454000_7045000_1k_1m_DEM.xyz &#13;
+454000 - coordinate easting of south-west tile corner &#13;
+7045000 - coordinate northing of south-west tile corner &#13;
+1k - tile dimension, eg 1km x 1km &#13;
+1m_DEM - Digital Elevation Model with 1m grid spacing &#13;
+25cm_cont - contours at 25cm intervals &#13;
+&#13;
+File Extensions: &#13;
+.xyz (space delimited ASCII format) &#13;
+.las (laser strikes classified in accordance with ASPRS V1.1 LAS file standards various point class levels &#13;
+_ESRI.asc (ESRI ASCII Grid format)</gco:CharacterString>
+            </supplementalInformation>
+        </MD_DataIdentification>
+    </identificationInfo>
+    
+    <dataQualityInfo>
+        <DQ_DataQuality>
+            <scope>
+                <DQ_Scope>
+                    <level>
+                        <MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</MD_ScopeCode>
+                    </level>
+                    
+                </DQ_Scope>
+            </scope>
+            
+            
+            <report>
+                <DQ_AbsoluteExternalPositionalAccuracy>
+                    <result>
+                        <DQ_ConformanceResult>
+                            <specification gco:nilReason="missing"/>
+                            <explanation>
+                                <gco:CharacterString>Vertical Accuracy: +/- 0.15m Standard Error (95% confidence level or 2 sigma)&#13;
+Horizontal Accuracy: +/- 0.40m Standard Error (68% confidence level or 2 sigma)</gco:CharacterString>
+                            </explanation>
+                            <pass gco:nilReason="inapplicable"/>
+                        </DQ_ConformanceResult>
+                    </result>
+                </DQ_AbsoluteExternalPositionalAccuracy>
+            </report>
+            
+            
+            
+            
+            
+            <lineage>
+                <LI_Lineage>
+                    <statement>
+                        <gco:CharacterString>ACQUISITION: Airborne Laser Scanning (ALS) data was acquired from a fixed wing aircraft between 3rd April and 10th July in 2014. Delays in acquiring the data were due to low cloud over the project area.  &#13;
+&#13;
+GROUND SUPPORT: Ground check points collected by the contractors allowed an assessment of the accuracy of the ALS data.</gco:CharacterString>
+                    </statement>
+                    <processStep>
+                        <LI_ProcessStep>
+                            <description>
+                                <gco:CharacterString>DATA PROCESSING: Reduction of the ALS data proceeded without any significant problems. Laser strikes were classified into ground and non-ground points using a single algorithm across the project area. Manual checking and editing of the data classification further improved the quality of the terrain model. &#13;
+&#13;
+FURTHER PROCESSING: 1 meter ESRI Grids have been derived from seamless ESRI terrain using Natural Neighbours interpolation method. This method uses the closest triangles and applies weights to the proportionate areas from the grid cell centroid to interpolate the value. It uses known elevation data, it does not make any predictions regarding the surface and accurately depicts existing troughs and peaks in the data and supports irregular point spacing, which suits the nature LiDAR data. &#13;
+&#13;
+Contours were generated automatically in Microstation DGN format from a smoothed, triangulated ground model and visually checked for completeness and logical consistency. Some cartographic license has been applied. The Contours were translated into ESRI Shapefile format using a customized Feature Manipulation Engine (FME) macro.&#13;
+&#13;
+DATA VALIDATION &#13;
+Ground data in this volume has been compared to 2243 test points obtained by field survey and assumed to be error-free. The test points were distributed in 20 groups across the mapping area and located on open clear ground. Comparison of the field test points with elevations interpolated from measured data resulted in:&#13;
+Ref Point Site: All&#13;
+No. of Points: 2243&#13;
+Mean Difference (m):-2.095&#13;
+Std Deviation (m):0.043&#13;
+RMS (m):2.095&#13;
+ &#13;
+The mean difference has been removed from the data. Final accuracy estimates after removing the mean offset yielded:&#13;
+Ref Point Site: All&#13;
+No. of Points: 2243&#13;
+Mean Difference (m):+0.005&#13;
+Std Deviation (m):0.044&#13;
+RMS (m):0.044&#13;
+ &#13;
+Data classification has been manually checked and edited against any available imagery.&#13;
+&#13;
+LIMITATIONS OF DATA: &#13;
+The definition of the ground under trees may be less accurate.</gco:CharacterString>
+                            </description>
+                        </LI_ProcessStep>
+                    </processStep>
+                    <source>
+                        <LI_Source>
+                            <description>
+                                <gco:CharacterString>SOURCE DATA&#13;
+Laser System: Pegasus, ALS60 and Riegl&#13;
+Pulse Rate Frequency: 100 kHz&#13;
+GPS Base Data: Static GPS&#13;
+Base Stn Coords: Rapid static GPS&#13;
+&#13;
+LASER DATA CHARACTERISTICS  &#13;
+Device Name: ALS60&#13;
+Half Scan Angle: 13 degrees &#13;
+Laser Pulse Rate Frequancy:144kHz &#13;
+Laser Scan Frequency: 62Hz&#13;
+Laser Pulse Mode: Single Pulse &#13;
+Swath Width (metres): 738m &#13;
+Average Point Spacing: 3.2 pts/square metre &#13;
+Laser return:1st, 2nd, 3rd and last &#13;
+Laser Intensity: All returns&#13;
+Laser Footprint:0.3m</gco:CharacterString>
+                            </description>
+                        </LI_Source>
+                    </source>
+                </LI_Lineage>
+            </lineage>
+        </DQ_DataQuality>
+    </dataQualityInfo>
+    <metadataConstraints>
+        <MD_SecurityConstraints>
+            <useLimitation>
+                <gco:CharacterString>Public</gco:CharacterString>
+            </useLimitation>
+            <classification>
+                <MD_ClassificationCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ClassificationCode" codeListValue="unclassified"/>
+            </classification>
+            <classificationSystem>
+                <gco:CharacterString>Metadata Access Level</gco:CharacterString>
+            </classificationSystem>
+        </MD_SecurityConstraints>
+    </metadataConstraints>
+</MD_Metadata>

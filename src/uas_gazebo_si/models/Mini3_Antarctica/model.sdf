@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <model name="Mini3_Antarctica">
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <heightmap>
+            <!-- 135 - 5.71 / Robbos 23.71 / Bunger 20.6 / Altum_135 - 28.46 -->
+            <uri>maps/Fixed_Mini3_DEM_v8.png</uri>
+            <size>50.0 50.0 5.71</size>
+            <pos>0.0 0.0 0</pos>
+          </heightmap>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <heightmap>
+            <use_terrain_paging>false</use_terrain_paging>
+            <texture>
+              <diffuse>materials/textures/Mini3_or_v4_15k.png</diffuse>
+              <normal>materials/textures/Mini3_or_normal_v4_15k.png</normal>
+              <size>50.0 50.0</size>
+            </texture>
+            <uri>maps/Fixed_Mini3_DEM_v8.png</uri>
+            <size>50.0 50.0 5.71</size>
+            <pos>0.0 0.0 0</pos>
+            <!-- Robbos - 210 / ASPA135 - 50 / Bungerhills 500 -->
+          </heightmap>s
+        </geometry>
+        <!-- <plugin filename="libgz-sim-thermal-system.so" name="gz::sim::systems::Thermal">
+          <heat_signature>materials/textures/thermal_layer_15k.png</heat_signature>
+          <max_temp>280</max_temp>
+          <resolution>3.0</resolution>
+        </plugin> -->
+      </visual>
+
+      
+
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      <enable_wind>0</enable_wind>
+      
+
+    </link>
+  </model>
+</sdf>

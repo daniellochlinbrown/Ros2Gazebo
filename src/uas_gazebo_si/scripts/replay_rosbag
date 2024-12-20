@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+function scriptHelp() {
+  echo "Usage: replay_rosbag.sh [options]
+
+Description:
+Replay ROSbags. Tmux must be installed in the local machine.
+
+Options:
+  -b,  --bag [filename]  # Path of the ROSbag to replay. It could be relative or absolute path.
+  -h,  --help            # Print this information.
+
+Example:
+
+  rosrun uas_gazebo_sim replay_rosbag -b 2021-08-25_15-23-09_serf_mode-3.bag
+"
+}
+
+## Declare argument parsing variables
+filename=""
+help="false"
+
+## Parse script arguments
+POSITIONAL=()
+while [[ $# -gt 0 ]]; do
+  key="$1"
+
+  case $key in
+  -b | --bag)
+    filename="$2"
+    shift # past argument
+    shift # past value
+    ;;
+  -h | --help)
+    help="true"
+    shift # past argument
+    ;;
+  *)                   # unknown option
+    POSITIONAL+=("$1") # save it in an array for later
+    shift              # past argument
+    ;;
+  esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+if [[ $help == "true" ]]; then
+  scriptHelp
+  return 0
+fi
+
+if [[ $filename == "" ]]; then
+  scriptHelp
+  return 0
+fi
+
+## Declare script variables
+host="$(hostname -I | cut -d' ' -f1)"
+export ROS_MASTER_URI=http://$host:11311
+export ROS_IP=$host
+scriptDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+
+audio_msg_cmd="rosrun scouter_ros audio_player_node"
+config_file="${scriptDir}/rviz_config_quteagles.rviz"
+
+## Execute commands
+echo "Killing any running processes ..."
+killall gazebo gzclient gzserver mavros_server roscore
+
+echo "Starting Tmux session and invoking individual scripts ..."
+tmux new-session -s replay\; select-window -t 0\; \
+  send-keys "roscore" C-m\; split-window -v\; \
+  send-keys "sleep 7" C-m\; send-keys "rosbag play ${filename} tf_throttle:=tf" C-m\; select-pane -t 0\; split-window -h\; \
+  send-keys "sleep 3" C-m\; send-keys "$audio_msg_cmd" C-m\; split-window -v\; \
+  send-keys "sleep 3" C-m\; send-keys "rviz -d $config_file" C-m\;

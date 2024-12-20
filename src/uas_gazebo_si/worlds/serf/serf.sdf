@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.9">
+  <world name="serf">
+    <physics type="ode">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+    <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+    <plugin name='gz::sim::systems::Imu' filename='gz-sim-imu-system'/>
+    <plugin name='gz::sim::systems::AirPressure' filename='gz-sim-air-pressure-system'/>
+    <plugin name="gz::sim::systems::ApplyLinkWrench" filename="gz-sim-apply-link-wrench-system"/>
+    <plugin name="gz::sim::systems::NavSat" filename="gz-sim-navsat-system"/>
+    <plugin name='gz::sim::systems::Sensors' filename='gz-sim-sensors-system'>
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <gui fullscreen='false'>
+      <plugin name='3D View' filename='GzScene3D'>
+        <gz-gui>
+          <title>3D View</title>
+          <property type='bool' key='showTitleBar'>0</property>
+          <property type='string' key='state'>docked</property>
+        </gz-gui>
+        <engine>ogre2</engine>
+        <scene>scene</scene>
+        <ambient_light>0.5984631152222222 0.5984631152222222 0.5984631152222222</ambient_light>
+        <background_color>0.8984631152222222 0.8984631152222222 0.8984631152222222</background_color>
+        <camera_pose>-2.1951 3.4245 2.1012 0 0.2624 2.9525</camera_pose>
+      </plugin>
+      <plugin name='World control' filename='WorldControl'>
+        <gz-gui>
+          <title>World control</title>
+          <property type='bool' key='showTitleBar'>0</property>
+          <property type='bool' key='resizable'>0</property>
+          <property type='double' key='height'>72</property>
+          <property type='double' key='width'>121</property>
+          <property type='double' key='z'>1</property>
+          <property type='string' key='state'>floating</property>
+          <anchors target='3D View'>
+            <line own='left' target='left'/>
+            <line own='bottom' target='bottom'/>
+          </anchors>
+        </gz-gui>
+        <play_pause>1</play_pause>
+        <step>1</step>
+        <start_paused>1</start_paused>
+      </plugin>
+      <plugin name='World stats' filename='WorldStats'>
+        <gz-gui>
+          <title>World stats</title>
+          <property type='bool' key='showTitleBar'>0</property>
+          <property type='bool' key='resizable'>0</property>
+          <property type='double' key='height'>110</property>
+          <property type='double' key='width'>290</property>
+          <property type='double' key='z'>1</property>
+          <property type='string' key='state'>floating</property>
+          <anchors target='3D View'>
+            <line own='right' target='right'/>
+            <line own='bottom' target='bottom'/>
+          </anchors>
+        </gz-gui>
+        <sim_time>1</sim_time>
+        <real_time>1</real_time>
+        <real_time_factor>1</real_time_factor>
+        <iterations>1</iterations>
+      </plugin>
+      <plugin name='Entity tree' filename='EntityTree'/>
+    </gui>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <grid>false</grid>
+      <ambient>0.2 0.2 0.2 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <sky>
+        <clouds>
+          <speed>4</speed>
+        </clouds>
+      </sky>
+      <shadows>false</shadows>
+    </scene>
+
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <world_frame_orientation>ENU</world_frame_orientation>
+      <latitude_deg>-27.389798</latitude_deg>
+      <longitude_deg>152.873436</longitude_deg>
+      <elevation>68</elevation>
+      <!-- <heading_deg>0</heading_deg> -->
+    </spherical_coordinates>
+
+    <light name='sunUTC' type='directional'>
+      <pose>0 0 500 0 -0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-5.00 -2.4 -3.78</direction>
+      <diffuse>0.904 0.904 0.904 1</diffuse>
+      <specular>0.271 0.271 0.271 1</specular>
+      <attenuation>
+        <range>2000</range>
+        <linear>0</linear>
+        <constant>1</constant>
+        <quadratic>0</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+    <include>
+      <uri>model://flying_arena_serf</uri>
+      <name>flying_arena_serf</name>
+      <static>1</static>
+    </include>
+
+    <!-- <include>
+      <uri>model://pickup</uri>
+      <pose>-27 22 -0.038 0 0 1.870796327</pose>
+      <static>1</static>
+    </include> -->
+    <!-- Models added for the experiment -->
+    <!-- <include>
+      <uri>model://gazebo</uri>
+      <pose>-30 27 0 0 0 1.57</pose>
+    </include> -->
+    <!-- ! Obstacles -->
+    <!-- <include>
+      <uri>model://table</uri>
+      <pose>-65 50 0 0 0 0.0</pose>
+    </include> -->
+    <include>
+      <uri>model://pine_tree</uri>
+      <name>test_tree</name>
+      <!-- <scale>0.02 0.02 0.02</scale> -->
+      <pose>-68 68 0 0 0 1.57</pose>
+    </include>
+
+    <!-- <include>
+      <uri>model://greenhouse</uri>
+      <name>greenhouse_1</name>
+      <pose>-35.377800 3.417770 -0.660000 0 0 1.410796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://greenhouse</uri>
+      <name>greenhouse_2</name>
+      <pose>-37.606556 -9.771381 -0.533741 0 0 1.410796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://greenhouse</uri>
+      <name>greenhouse_3</name>
+      <pose>-39.546532 -22.735783 -0.409315 0 0 1.410796327</pose>
+      <static>1</static>
+    </include> -->
+    <include>
+      <uri>model://tree_oak_15m</uri>
+      <name>oak_tree_1</name>
+      <pose>-43.103523 21.392040 -0.005254 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_2</name>
+      <pose>-63.374596 -38.049717 1.231964 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_10m_3</name>
+      <pose>-66.235909 -12.804734 0.84959 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_30m</uri>
+      <name>oak_tree_4</name>
+      <pose>-37.723274 -31.999765 0.311464 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_5</name>
+      <pose>-30.119291 -12.422068 0.123543 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_6</name>
+      <pose>-10.337054 0.716425 -0.005521 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_25m</uri>
+      <name>oak_tree_7</name>
+      <pose>-10.072371 -20.943531 -0.333321 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_25m</uri>
+      <name>oak_tree_8</name>
+      <pose>-7.482615 -26.127180 -0.053958 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_9</name>
+      <pose>-30.880337 48.690136 0.079430 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_10</name>
+      <pose>-19.280569 54.721279 -0.167562 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_15m</uri>
+      <name>oak_tree_11</name>
+      <pose>-8.194941 9.482359 -0.083759 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_15m</uri>
+      <name>oak_tree_12</name>
+      <pose>-14.109335 8.051229 -0.083759 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_15m</uri>
+      <name>oak_tree_13</name>
+      <pose>-10.973758 -46.109413 -0.108000 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_15m</uri>
+      <name>oak_tree_13a</name>
+      <pose>-6.633885 -50.359001 -0.108000 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_20m</uri>
+      <name>tree_oak_20m_1</name>
+      <pose>4.319033 5.005999 -0.698850 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_14</name>
+      <pose>55.810699 45.639801 -0.979981 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_15</name>
+      <pose>68.031883 40.90401 -1.134125 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_16</name>
+      <pose>24.795099 -55.410198 -0.694563 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_17</name>
+      <pose>16.353876 -30.195288 -0.121577 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_18</name>
+      <pose>21.522509 -0.252184 -0.413771 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_19</name>
+      <pose>22.422000 -8.191100 -0.413771 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_20m</uri>
+      <name>oak_tree_20</name>
+      <pose>-7.845534 -10.887136 0.034597 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_20m</uri>
+      <name>oak_tree_21</name>
+      <pose>-24.798309 16.231762 0.017635 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_15m</uri>
+      <name>oak_tree_22</name>
+      <pose>-17.945404 13.419113 0.017635 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_35m</uri>
+      <name>oak_tree_23</name>
+      <pose>21.577356 64.298935 -0.748272 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_35m</uri>
+      <name>oak_tree_24</name>
+      <pose>0.429901 72.846298 -0.556561 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_35m</uri>
+      <name>oak_tree_25</name>
+      <pose>43.406204 56.184761 -1.146546 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_30m</uri>
+      <name>oak_tree_26</name>
+      <pose>58.105331 63.679039 -1.964085 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_20m</uri>
+      <name>oak_tree_27</name>
+      <pose>-9.072298 -0.678588 -0.341033 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_20m</uri>
+      <name>oak_tree_28</name>
+      <pose>4.326038 17.861589 -0.284429 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_20m</uri>
+      <name>oak_tree_29</name>
+      <pose>9.423140 14.692432 -0.284429 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_30m</uri>
+      <name>oak_tree_30</name>
+      <pose>3.671333 39.999535 -0.779537 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_15m</uri>
+      <name>oak_tree_31</name>
+      <pose>-5.998770 33.052000 -0.666643 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_15m</uri>
+      <name>oak_tree_32</name>
+      <pose>-1.971333 26.237070 -0.398486 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_15m</uri>
+      <name>oak_tree_33</name>
+      <pose>14.373400 19.135201 -0.583294 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_oak_10m</uri>
+      <name>oak_tree_34</name>
+      <pose>22.905645 37.158943 -0.714648 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_simple</uri>
+      <name>tree_simple_1</name>
+      <pose>-12.068550 43.767395 -0.410469 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_simple</uri>
+      <name>tree_simple_2</name>
+      <pose>-6.634889 58.475815 -0.679740 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_simple</uri>
+      <name>tree_simple_3</name>
+      <pose>25.272095 24.671516 -0.685573 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_simple</uri>
+      <name>tree_simple_4</name>
+      <pose>9.562989 -21.171211 -0.255084 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_simple</uri>
+      <name>tree_simple_5</name>
+      <pose>11.386189 -47.012154 -0.17 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_simple</uri>
+      <name>tree_simple_6</name>
+      <pose>-65.430923 -26.251169 0.973001 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_simple</uri>
+      <name>tree_simple_7</name>
+      <pose>25.795158 40.271835 -0.685573 0 0 0</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_simple</uri>
+      <name>tree_simple_8</name>
+      <pose>-24.163723 -37.975891 -0.000268 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_simple</uri>
+      <name>tree_simple_9</name>
+      <pose>0.252465 -49.265179 -0.236242 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_simple</uri>
+      <name>tree_simple_10</name>
+      <pose>-56.247299 -35.446098 0.875561 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+    <include>
+      <uri>model://tree_simple</uri>
+      <name>tree_simple_11</name>
+      <pose>-19.223515 25.96524 -0.087266 0 0 1.570796327</pose>
+      <static>1</static>
+    </include>
+
+    <!-- <population name="oak_population_1">
+      <model name="oak_tree_s1">
+        <include>
+          <static>true</static>
+          <uri>model://tree_oak_10m</uri>
+        </include>
+      </model>
+      <pose>3.5 62 -1 0 0 1.870796327</pose>
+      <cylinder>
+        <radius>15</radius>
+        <length>0.01</length>
+      </cylinder>
+      <model_count>12</model_count>
+      <distribution>
+        <type>uniform</type>
+      </distribution>
+    </population> -->
+    <!-- <population name="oak_population_2">
+      <model name="oak_tree_s2">
+        <include>
+          <static>true</static>
+          <uri>model://tree_oak_10m</uri>
+        </include>
+      </model>
+      <pose>45.671097 63.074463 -1.22302 0 0 0</pose>
+      <box>
+        <size>52 20 0.01</size>
+      </box>
+      <model_count>28</model_count>
+      <distribution>
+        <type>uniform</type>
+      </distribution>
+    </population> -->
+    <population name="oak_population_3">
+      <model name="oak_tree_s3">
+        <include>
+          <static>true</static>
+          <uri>model://tree_oak_15m</uri>
+        </include>
+      </model>
+      <pose>68.0 6.0 -0.359367 0 0 1.1</pose>
+      <box>
+        <size>45 28 0.01</size>
+      </box>
+      <model_count>26</model_count>
+      <distribution>
+        <type>uniform</type>
+      </distribution>
+    </population>
+    <population name="oak_population_4">
+      <model name="oak_tree_s4">
+        <include>
+          <static>true</static>
+          <uri>model://tree_oak_10m</uri>
+        </include>
+      </model>
+      <pose>62.5 -58 -1 0 0 1.570796327</pose>
+      <cylinder>
+        <radius>16</radius>
+        <length>0.01</length>
+      </cylinder>
+      <model_count>12</model_count>
+      <distribution>
+        <type>uniform</type>
+      </distribution>
+    </population>
+    <population name="oak_population_5">
+      <model name="oak_tree_s5">
+        <include>
+          <static>true</static>
+          <uri>model://tree_oak_15m</uri>
+        </include>
+      </model>
+      <pose>-35.806122 -49.909119 0.165459 0 0 1.570796327</pose>
+      <cylinder>
+        <radius>18</radius>
+        <length>0.01</length>
+      </cylinder>
+      <model_count>11</model_count>
+      <distribution>
+        <type>uniform</type>
+      </distribution>
+    </population>
+    <population name="oak_population_6">
+      <model name="oak_tree_s6">
+        <include>
+          <static>true</static>
+          <uri>model://tree_oak_10m</uri>
+        </include>
+      </model>
+      <pose>36.265347 -21.099871 -0.523696 0 0 1.570796327</pose>
+      <cylinder>
+        <radius>17</radius>
+        <length>0.01</length>
+      </cylinder>
+      <model_count>12</model_count>
+      <distribution>
+        <type>uniform</type>
+      </distribution>
+    </population>
+    <!-- <population name="oak_population_7">
+      <model name="oak_tree_s7">
+        <include>
+          <static>true</static>
+          <uri>model://tree_oak_10m</uri>
+        </include>
+      </model>
+      <pose>7.159779 29.135138 -0.289395 0 0 1.570796327</pose>
+      <cylinder>
+        <radius>18</radius>
+        <length>0.01</length>
+      </cylinder>
+      <model_count>6</model_count>
+      <distribution>
+        <type>uniform</type>
+      </distribution>
+    </population> -->
+  </world>
+</sdf>

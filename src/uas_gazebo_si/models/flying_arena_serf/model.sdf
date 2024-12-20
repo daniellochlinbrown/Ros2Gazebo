@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <model name="flying_arena_serf">
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <heightmap>
+            <!-- min: 63.8307, max 69.6777. Diff => 5.847 -->
+            <uri>maps/serf_150m_257_1m.png</uri>
+            <size>150.0 150.0 5.847</size>
+            <pos>0.0 0.0 -3.785</pos>
+          </heightmap>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <heightmap>
+            <use_terrain_paging>false</use_terrain_paging>
+            <texture>
+              <diffuse>materials/textures/20200528_XT2_Video_dataset.jpg</diffuse>
+              <normal>materials/textures/20200528_XT2_Video_dataset.jpg</normal>
+              <size>150</size>
+            </texture>
+            <!-- <blend>
+              <min_height>1.3</min_height>
+              <fade_dist>0.1</fade_dist>
+            </blend>
+            <blend>
+              <min_height>2</min_height>
+              <fade_dist>0.2</fade_dist>
+            </blend> -->
+            <uri>maps/serf_150m_257_1m.png</uri>
+            <size>150.0 150.0 5.847</size>
+            <pos>0.0 0.0 -3.785</pos>
+          </heightmap>
+        </geometry>
+      </visual>
+
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      <enable_wind>0</enable_wind>
+
+    </link>
+  </model>
+</sdf>
