@@ -83,6 +83,7 @@
       </sky>
       <shadows>false</shadows>
     </scene>
+
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
       <latitude_deg>-66.2822201</latitude_deg>
@@ -117,6 +118,5 @@
       <name>Robbos</name>
       <static>1</static>
     </include>
-
   </world>
 </sdf>

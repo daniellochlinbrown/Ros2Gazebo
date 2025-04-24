@@ -80,7 +80,8 @@ git clone https://github.com/PX4/px4_msgs.git ${ROS2_WS_DIR}/src/px4_msgs
 
 echo "export ROS2_WS_PATH=${ROS2_WS_DIR}" >>~/.bashrc
 echo "export WS_PATH=${WS_PATH}" >>~/.bashrc
-echo "export PX4_DIR=${PX4_DIR}/PX4-Autopilot" >>~/.bashrc
+echo "export PX4_DIR=${PX4_DIR}" >>~/.bashrc
+# echo "export PX4_DIR=${PX4_DIR}/PX4-Autopilot" >>~/.bashrc
 
 ACTIVATE_FUN='
 # Alias to kill any running ROS and Gazebo processes
@@ -107,6 +108,7 @@ else
 fi
 
 cd ${WS_PATH}
+# Revise this code instruction
 colcon build --packages-select px4_msgs uas_gazebo_sim -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 source ~/.bashrc
 

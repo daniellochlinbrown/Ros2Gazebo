@@ -6,7 +6,7 @@ set -e
 # script directory
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 # Change this to your desired PX4 version
-PX4_VERSION="v1.14.3"
+PX4_VERSION="v1.15.3"
 
 # check ubuntu version
 UBUNTU_RELEASE=$(lsb_release -rs)

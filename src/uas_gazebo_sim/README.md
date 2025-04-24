@@ -113,19 +113,23 @@ To load the simulation environment, open a new terminal and type:
 
 ```sh
 activate qutas_sim
-
+```
 Or
 
+```sh
 source ${WS_PATH}/src/uas_gazebo_sim/scripts/init_simulator.sh
+```
 
-to source the catkin workspace and simulator environment files.
+to source the ROS2 workspace and the simulator environment files.
 Then, run:
 
+```sh
 killgazebo # Kills any running gazebo processes
 cd <package-path>
-bash launch/load_demo.sh -w mini3
+bash launch/load_demo.sh -w aspa135_m3
+```
 
-to load Gazebo with PX4 and the chosen world environment.
+to load Gazebo with PX4 and the chosen world environment (in this case, SERF).
 
 ### UAV arming, take-off and landing
 
@@ -168,7 +172,7 @@ See the [changelog](CHANGELOG.md) for further details.
 
 ## Copyright
 
-Copyright &copy; 2018-2022 Juan Sandino (sandinoj@qut.edu.au), Felipe Gonzalez (felipe.gonzalez@qut.edu.au), Queensland University of Technology.
+Copyright &copy; 2018-2024 Juan Sandino (j.sandino@qut.edu.au), Felipe Gonzalez (felipe.gonzalez@qut.edu.au), Queensland University of Technology.
 All rights reserved.
 
 This software is protected under the Copyright Act 1968 and the

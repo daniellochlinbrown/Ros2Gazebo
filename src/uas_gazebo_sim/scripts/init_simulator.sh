@@ -33,8 +33,6 @@ source /opt/ros/$ROS_DISTRO/setup.bash
 source ${WS_PATH}/install/setup.bash
 
 ## Gazebo Sim ENV VARs
-export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:${REPO_PATH}/models:${REPO_PATH}/worlds
-export LB_MODEL_PATH=${LB_MODEL_PATH}:${WS_PATH}/devel/lib
 export GZ_SIM_RESOURCE_PATH=${IGN_GAZEBO_RESOURCE_PATH}:${REPO_PATH}/models:${REPO_PATH}/worlds
 
 ## PX4 ENV VARs for ROS2
@@ -48,9 +46,6 @@ if [ -z "$PX4_DIR" ]; then
   echo
   source ~/.bashrc
 fi
-
-# Source PX4 setup script for Gazebo simulation
-source $PX4_DIR/Tools/simulation/gazebo-classic/setup_gazebo.bash $PX4_DIR $PX4_DIR/build/px4_sitl_default > ~/.source_px4.log
 
 # Set ROS2 environment variables
 export COLCON_PREFIX_PATH=$PX4_DIR/build/px4_sitl_default/install:${COLCON_PREFIX_PATH}

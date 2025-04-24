@@ -5,9 +5,9 @@ WORLD_NAME="aspa135_m3"
 MODEL_NAME="x500"
 VERBOSE_FLAG="" # Verbose is off by default
 MODEL_POSE="0,0,0,0,0,0"
-PX4_GZ_MODEL_POSE="0,0,10,0,0,0"
-# PX4_GZ_MODEL_POSE_1="0,0,10,0,0,0"
-# PX4_GZ_MODEL_POSE_2="0,0,10,0,0,0"
+# PX4_GZ_MODEL_POSE="0,0,10,0,0,0"
+PX4_GZ_MODEL_POSE_1="0,0,10,0,0,0"
+PX4_GZ_MODEL_POSE_2="0,0,10,0,0,0"
 ARUCO_LAUNCH_FILE="aruco_single_launch.py" # Default Aruco detection launch file
 
 # Usage message
@@ -48,11 +48,14 @@ shift $((OPTIND - 1))
 
 if [ "$WORLD_NAME" == "serf" ]; then
   MODEL_POSE="0,0,-3.65"
+  echo "World name: $WORLD_NAME"
 fi
 
 if [ "$WORLD_NAME" == "aspa135_m3" ]; then
   MODEL_POSE="0,0,0"
-  PX4_GZ_MODEL_POSE="0,0,1.81,0,0,0"
+#   PX4_GZ_MODEL_POSE="0,0,1.81,0,0,0"
+  PX4_GZ_MODEL_POSE_1="0,2,10,0,0,0"
+  PX4_GZ_MODEL_POSE_2="0,-2,10,0,0,0"
   echo "World name: $WORLD_NAME"
 fi
 
@@ -81,20 +84,20 @@ sleep 5
 
 # Start PX4 SITL
 echo "Starting PX4 SITL..."
-PX4_GZ_STANDALONE=1 PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_${MODEL_NAME} PX4_GZ_WORLD="$WORLD_NAME" PX4_GZ_MODEL_POSE="$PX4_GZ_MODEL_POSE" $PX4_DIR/build/px4_sitl_default/bin/px4 &
+# PX4_GZ_STANDALONE=1 PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_${MODEL_NAME} PX4_GZ_WORLD="$WORLD_NAME" PX4_GZ_MODEL_POSE="$PX4_GZ_MODEL_POSE" $PX4_DIR/build/px4_sitl_default/bin/px4 &
 
-#What is the function of "&" at the end of line 81
-
-# PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_x500 PX4_GZ_WORLD="$WORLD_NAME" $PX4_DIR/build/px4_sitl_default/bin/px4 -i 1 
-# PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_x500 PX4_GZ_WORLD="$WORLD_NAME" PX4_GZ_MODEL_POSE="$PX4_GZ_MODEL_POSE_1" $PX4_DIR/build/px4_sitl_default/bin/px4 -i 2
-# PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_x500 PX4_GZ_WORLD="$WORLD_NAME" PX4_GZ_MODEL_POSE="$PX4_GZ_MODEL_POSE_2" $PX4_DIR/build/px4_sitl_default/bin/px4 -i 3
+# PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_${MODEL_NAME} PX4_GZ_WORLD="$WORLD_NAME" $PX4_DIR/build/px4_sitl_default/bin/px4 -i 1 &
+sleep 10
+PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_${MODEL_NAME} PX4_GZ_WORLD="$WORLD_NAME" PX4_GZ_MODEL_POSE="$PX4_GZ_MODEL_POSE_1" $PX4_DIR/build/px4_sitl_default/bin/px4 -i 1 &
+sleep 10
+PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_${MODEL_NAME} PX4_GZ_WORLD="$WORLD_NAME" PX4_GZ_MODEL_POSE="$PX4_GZ_MODEL_POSE_2" $PX4_DIR/build/px4_sitl_default/bin/px4 -i 2 &
 
 # Wait a bit to ensure PX4 SITL starts properly
 sleep 10
 
 # Source ROS 2 setup file
 # source /opt/ros/humble/setup.bash
-source $REPOSITORY_DIR/../../install/setup.bash  # This path should match ROS2 standards, but check your workspace location
+source $REPOSITORY_DIR/../install/setup.bash  # This path should match ROS2 standards, but check your workspace location
 
 # Start the ROS 2-Gazebo parameter bridge
 echo "Starting ROS 2-Gazebo parameter bridge..."

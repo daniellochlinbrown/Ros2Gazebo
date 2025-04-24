@@ -25,7 +25,7 @@ sudo apt install ros-dev-tools
 source /opt/ros/humble/setup.bash && echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
 # Some Python dependencies must also be installed
-pip install --user -U empy==3.3.4 pyros-genmsg setuptools
+pip install --user -U empy==3.3.4 pyros-genmsg setuptools==70.2.0
 
 echo
 echo "[DONE] ROS2 Humble installed!"

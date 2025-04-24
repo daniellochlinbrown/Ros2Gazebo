@@ -113,8 +113,8 @@
     </light>
 
     <include>
-      <uri>model://bungerhills</uri>
-      <name>bungerhills
+      <uri>model://bunger_hills</uri>
+      <name>bunger_hills
       </name>
       <static>1</static>
     </include>

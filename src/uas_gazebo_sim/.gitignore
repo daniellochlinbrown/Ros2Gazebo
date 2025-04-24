@@ -93,7 +93,5 @@ CATKIN_IGNORE
 # *.bt
 
 # Texture Files
-/models/Mini3_Antarctica/maps
-/models/Mini3_Antarctica/materials/textures
-/models/Robbos
-/models/bungerhills
+/models/aspa135_mini3
+/models/bunger_hills
