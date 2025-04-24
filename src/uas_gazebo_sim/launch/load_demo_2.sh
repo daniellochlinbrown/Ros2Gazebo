@@ -5,7 +5,6 @@ WORLD_NAME="aspa135_m3"
 MODEL_NAME="x500"
 VERBOSE_FLAG="" # Verbose is off by default
 MODEL_POSE="0,0,0,0,0,0"
-# PX4_GZ_MODEL_POSE="0,0,10,0,0,0"
 PX4_GZ_MODEL_POSE_1="0,0,10,0,0,0"
 PX4_GZ_MODEL_POSE_2="0,0,10,0,0,0"
 ARUCO_LAUNCH_FILE="aruco_single_launch.py" # Default Aruco detection launch file
@@ -53,15 +52,13 @@ fi
 
 if [ "$WORLD_NAME" == "aspa135_m3" ]; then
   MODEL_POSE="0,0,0"
-#   PX4_GZ_MODEL_POSE="0,0,1.81,0,0,0"
   PX4_GZ_MODEL_POSE_1="0,2,10,0,0,0"
   PX4_GZ_MODEL_POSE_2="0,-2,10,0,0,0"
   echo "World name: $WORLD_NAME"
 fi
 
 if [ "$WORLD_NAME" == "bunger" ]; then
-  MODEL_POSE="0,0,0"
-  PX4_GZ_MODEL_POSE="-2,2,10,0,0,0"
+  MODEL_POSE="-2,2,10,0,0,0"
   echo "World name: $WORLD_NAME"
 fi
 
@@ -77,7 +74,7 @@ fi
 
 # Start Gazebo simulation
 echo "Starting Gazebo with world: $WORLD_PATH"
-gz sim $VERBOSE_FLAG -r "$WORLD_PATH" &
+gz sim $VERBOSE_FLAG -r "$WORLD_PATH" --gui-config "$REPOSITORY_DIR/launch/gazebo_gui.config" &
 
 # Wait a bit to ensure Gazebo starts properly
 sleep 5
@@ -97,7 +94,7 @@ sleep 10
 
 # Source ROS 2 setup file
 # source /opt/ros/humble/setup.bash
-source $REPOSITORY_DIR/../install/setup.bash  # This path should match ROS2 standards, but check your workspace location
+source $REPOSITORY_DIR/../../install/setup.bash  # This path should match ROS2 standards, but check your workspace location
 
 # Start the ROS 2-Gazebo parameter bridge
 echo "Starting ROS 2-Gazebo parameter bridge..."

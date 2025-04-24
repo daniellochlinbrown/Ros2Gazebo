@@ -5,7 +5,6 @@ WORLD_NAME="aspa135_m3"
 MODEL_NAME="x500"
 VERBOSE_FLAG="" # Verbose is off by default
 MODEL_POSE="0,0,0,0,0,0"
-PX4_GZ_MODEL_POSE="0,0,10,0,0,0"
 # PX4_GZ_MODEL_POSE_1="0,0,10,0,0,0"
 # PX4_GZ_MODEL_POSE_2="0,0,10,0,0,0"
 ARUCO_LAUNCH_FILE="aruco_single_launch.py" # Default Aruco detection launch file
@@ -51,14 +50,12 @@ if [ "$WORLD_NAME" == "serf" ]; then
 fi
 
 if [ "$WORLD_NAME" == "aspa135_m3" ]; then
-  MODEL_POSE="0,0,0"
-  PX4_GZ_MODEL_POSE="0,0,1.81,0,0,0"
+  MODEL_POSE="0,0,1.81,0,0,0"
   echo "World name: $WORLD_NAME"
 fi
 
 if [ "$WORLD_NAME" == "bunger" ]; then
-  MODEL_POSE="0,0,0"
-  PX4_GZ_MODEL_POSE="-2,2,10,0,0,0"
+  MODEL_POSE="-2,2,10,0,0,0"
   echo "World name: $WORLD_NAME"
 fi
 
@@ -74,14 +71,14 @@ fi
 
 # Start Gazebo simulation
 echo "Starting Gazebo with world: $WORLD_PATH"
-gz sim $VERBOSE_FLAG -r "$WORLD_PATH" &
+gz sim $VERBOSE_FLAG -r "$WORLD_PATH" --gui-config "$REPOSITORY_DIR/launch/gazebo_gui.config" &
 
 # Wait a bit to ensure Gazebo starts properly
 sleep 5
 
 # Start PX4 SITL
 echo "Starting PX4 SITL..."
-PX4_GZ_STANDALONE=1 PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_${MODEL_NAME} PX4_GZ_WORLD="$WORLD_NAME" PX4_GZ_MODEL_POSE="$PX4_GZ_MODEL_POSE" $PX4_DIR/build/px4_sitl_default/bin/px4 &
+PX4_GZ_STANDALONE=1 PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_${MODEL_NAME} PX4_GZ_WORLD=${WORLD_NAME} PX4_GZ_MODEL_POSE=${MODEL_POSE} $PX4_DIR/build/px4_sitl_default/bin/px4 &
 
 #What is the function of "&" at the end of line 81
 
