@@ -8,7 +8,7 @@
         <pose>0 0 0.001 0 0 0</pose> <!-- Slight elevation to avoid z-fighting -->
         <geometry>
           <plane>
-            <size>3 3</size> <!-- Adjust size to match the real size of the marker -->
+            <size>0.3 0.3</size> <!-- Adjust size to match the real size of the marker -->
           </plane>
         </geometry>
         <material>
@@ -26,10 +26,10 @@
         <cast_shadows>false</cast_shadows> <!-- Disable shadows -->
       </visual>
       <collision name="aruco_marker_collision">
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0.001 0 0 0</pose>
         <geometry>
           <plane>
-            <size>2 2</size> <!-- Matching size for the collision box -->
+            <size>0.3 0.3</size> <!-- Matching size for the collision box -->
           </plane>
         </geometry>
       </collision>

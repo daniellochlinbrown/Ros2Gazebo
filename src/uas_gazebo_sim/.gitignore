@@ -93,5 +93,7 @@ CATKIN_IGNORE
 # *.bt
 
 # Texture Files
-/models/aspa135_mini3
-/models/bunger_hills
+/models/aspa135_mini3/materials
+/models/aspa135_mini3/maps
+/models/bunger_hills/materials
+/models/bunger_hills/maps

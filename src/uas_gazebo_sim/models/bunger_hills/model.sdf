@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <model name="bunger_hills">
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <heightmap>
+            <!-- 135 - 5.71 / Robbos 23.71 / Bunger 20.6 / Altum_135 - 28.46 -->
+            <uri>maps/Resized_DEM.png</uri>
+            <size>250.0 250.0 33.0</size>
+            <pos>0.0 0.0 0</pos>
+          </heightmap>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <heightmap>
+            <use_terrain_paging>false</use_terrain_paging>
+            <texture>
+              <diffuse>materials/textures/Bungerhills_15k.png</diffuse>
+              <normal>materials/textures/Bungerhills_15k_normal.png</normal>
+              <size>250.0 250.0</size>
+            </texture>
+            <uri>maps/Resized_DEM.png</uri>
+            <size>250.0 250.0 33.0</size>
+            <pos>0.0 0.0 0</pos>
+            <!-- Robbos - 210 / ASPA135 - 50 / Bungerhills 500 -->
+          </heightmap>
+        </geometry>
+      </visual>
+
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      <enable_wind>0</enable_wind>
+      
+
+    </link>
+  </model>
+</sdf>

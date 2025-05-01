@@ -27,50 +27,6 @@
           </mesh>
         </geometry>
       </visual>
-      <sensor name="camera_sensor" type="camera">
-        <pose>0 0 -0.1 0 1.5708 0</pose> <!-- Adjust the position and orientation as needed -->
-        <camera>
-          <horizontal_fov>1.047</horizontal_fov>
-          <image>
-            <width>640</width>
-            <height>640</height>
-            <format>R8G8B8</format>
-          </image>
-          <clip>
-            <near>0.1</near>
-            <far>100</far>
-          </clip>
-        </camera>
-        <update_rate>60</update_rate>
-        <topic>/camera/image_raw</topic>
-      </sensor>
-
-      <!-- <sensor name="thermal_sensor" type="thermal">
-        <pose>0 0 -0.1 0 1.5708 0</pose>
-        <camera>
-          <horizontal_fov>1.047</horizontal_fov>
-          <image>
-            <width>640</width>
-            <height>480</height>
-            <format>L8</format> 
-          </image>
-          <clip>
-            <near>0.1</near>
-            <far>100</far>
-          </clip>
-        </camera>
-        <update_rate>30</update_rate>
-        <topic>/thermal/image_raw</topic>
-        <plugin
-          filename="gz-sim-thermal-sensor-system"
-          name="gz::sim::systems::ThermalSensor">
-          <min_temp>253</min_temp>
-          <max_temp>285</max_temp>
-          <resolution>3.0</resolution>
-        </plugin>
-      </sensor> -->
-      
-
       <visual name="5010_motor_base_0">
         <pose>0.174 0.174 .032 0 0 -.45</pose>
         <geometry>
@@ -261,7 +217,7 @@
       </collision>
       <sensor name="air_pressure_sensor" type="air_pressure">
         <always_on>1</always_on>
-        <update_rate>20</update_rate>
+        <update_rate>50</update_rate>
         <air_pressure>
           <pressure>
             <noise type="gaussian">
@@ -271,14 +227,9 @@
           </pressure>
         </air_pressure>
       </sensor>
-      <sensor name="magnetometer" type="magnetometer">
-        <update_rate>50</update_rate>
-        <always_on>true</always_on>
-        <visualize>true</visualize>
-      </sensor>
       <sensor name="imu_sensor" type="imu">
         <always_on>1</always_on>
-        <update_rate>150</update_rate>
+        <update_rate>250</update_rate>
         <imu>
           <angular_velocity>
             <x>
@@ -611,10 +562,7 @@
           </friction>
         </surface>
       </collision>
-
     </link>
-
-
     <joint name="rotor_3_joint" type="revolute">
       <parent>base_link</parent>
       <child>rotor_3</child>

@@ -22,8 +22,10 @@ fi
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 # Repository directory
 REPO_PATH=$(cd "$(dirname "$DIR")" && pwd)
+# echo "REPO PATH: $REPO_PATH"
 # Workspace directory
 WS_PATH=$(cd "$(dirname "$DIR")/../.." && pwd)
+# echo "WS PATH: $WS_PATH"
 
 # Source Environments
 ## ROS2 Distro
